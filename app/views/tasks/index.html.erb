@@ -4,7 +4,7 @@
   <li>
     <%= link_to task.id, task %>
     <%= task.content %>
-    <%= ": " + task.status %></li>
+    <%= ": " + task.status.to_s %></li>
   <% end %>
 </ul>
 
