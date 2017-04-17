@@ -23,8 +23,8 @@ class TasksController < ApplicationController
       redirect_to @task
       return
     end
-    flsh.now[:danger] = 'Taskが作成されませんでした'
-     render :new
+    flash.now[:danger] = 'Taskが作成されませんでした'
+    render :new
   end 
   
   def update
