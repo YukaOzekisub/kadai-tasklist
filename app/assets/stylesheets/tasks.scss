@@ -1,3 +1,14 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* デフォルトのスタイル */
+
+@media (min-width: 992px) {
+  /* ウインドウ幅992pxの以上のときに適用されるスタイル */
+}
+
+@media (min-width: 1199px) {
+  /* ウインドウ幅1200px以上の時に適用されるスタイル */
+}
