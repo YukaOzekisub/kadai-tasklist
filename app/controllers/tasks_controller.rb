@@ -16,11 +16,11 @@ class TasksController < ApplicationController
   end
   
   def create
-    task = Task.new(task_params)
+    @task = Task.new(task_params)
     
-    if task.save
+    if @task.save
       flash[:success] = 'Taskが正常に作成されました'
-      redirect_to task
+      redirect_to @task
       return
     end
     flsh.now[:danger] = 'Taskが作成されませんでした'
@@ -28,11 +28,12 @@ class TasksController < ApplicationController
   end 
   
   def update
-    task = Task.find(params[:id])
+    @task = Task.find(params[:id])
     
-    if task.update(task_params)
+    if @task.update(task_params)
       flash[:success] = 'Taskは正常に更新されました'
-      redirect_to task and return
+      redirect_to @task
+      return
     end
     
     flash.now[:danger] = 'Taskは更新されませんでした'
@@ -41,8 +42,8 @@ class TasksController < ApplicationController
   
   
   def destroy
-    task = Task.find(params[:id])
-    task.destroy
+    @task = Task.find(params[:id])
+    @task.destroy
     
     flash[:success] = 'Taskは正常に削除されました'
     redirect_to tasks_url
