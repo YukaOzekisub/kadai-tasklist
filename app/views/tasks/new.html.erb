@@ -1,15 +1,5 @@
 <h2>タスクの新規作成ページ</h2>
-<%= form_for(@task) do |f| %>
-  <%= f.label :content, 'Taskの内容' %>
-  <br />
-  <%= f.text_field :content %>
-  <br />
-  <%= f.label :status, 'Taskの状況' %>
-  <br />
-  <%= f.text_field :status %>
-  <br />
-  <%= f.submit '投稿' %>
-<% end %>
-
+<%= render 'error', task: @task %>
+<%= render 'form', task: @task %>
 <%= link_to '一覧に戻る', tasks_path %>
   
