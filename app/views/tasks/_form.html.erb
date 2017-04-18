@@ -1,17 +1,7 @@
 <div class="row">
     <%= form_for(task) do |f| %>
       
-      <% if task.errors.any? %>
-        <div class="alert alert-warning", id="error_explanation">
-          <ul>
-            <% task.errors.full_messages.each do |message| %>
-              <li>
-                <%= message %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= render 'layouts/error_messages', model: f.object %>
   
       <div class="form-group">
         <div class="col-sm-offset-2 col-lg-offset-3">
