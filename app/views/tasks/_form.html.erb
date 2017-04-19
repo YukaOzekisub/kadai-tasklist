@@ -28,6 +28,9 @@
     <div class="form-group">
       <div class="col-sm-offset-2 col-lg-offset-3">
         <div class="col-xs-12 col-sm-8 col-lg-6">
+          <% if form_type == 'edit'%>
+            <%= link_to '戻る', task_path, class: 'btn btn-info' %>
+          <% end %>
           <%= f.submit '投稿', class: 'btn btn-promary' %>
         </div>
       </div>

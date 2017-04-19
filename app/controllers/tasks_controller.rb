@@ -11,10 +11,12 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
+    @form_type = 'new'
   end
   
   def edit
     @task = Task.find(params[:id])
+    @form_type = 'edit'
   end
   
   def create
