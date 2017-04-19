@@ -2,11 +2,12 @@
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
 <% else %>
   <div class="center jumbotron">
-    <div class="left">
-      <h2>TaskList</h2>
-    </div>
-    
     <div class="center">
+      <h2>Welcome to TaskList</h2>
+      <h2>
+        <span class="glyphicon glyphicon-calendar"></span>
+        <span class="glyphicon glyphicon-pencil"></span>
+      </h2>
       <%= link_to '新規ユーザ登録', signup_path, class: 'btn btn-md btn-primary' %>
     </div>
   </div>
