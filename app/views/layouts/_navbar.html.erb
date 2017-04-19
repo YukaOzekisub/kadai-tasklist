@@ -17,7 +17,7 @@
               <li><%= link_to 'ホーム', "/users/#{@current_user.id}" %></li>
             <% end %>
             <li><%= link_to  '新規タスクの作成', new_task_path %></li>
-            <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+            <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
           <% else %>
             <li><%= link_to '新規ユーザ登録', signup_path %></li>
             <li><%= link_to 'ログイン', login_path %></li>
