@@ -22,7 +22,7 @@
               <th>id</th>
               <th>タスク</th>
               <th>状態</th>
-              <th>詳細</th>
+              <% if @edit_mode%><th>詳細</th><% end %>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +31,7 @@
                 <td><%= task.id %></td>
                 <td><%= task.content %></td>
                 <td><%= task.status %></td>
-                <td><%= link_to '詳細', task, class: 'btn btn-info btn-xs' %></td>
+                <% if @edit_mode%><td><%= link_to '詳細', task, class: 'btn btn-info btn-xs' %></td><% end %>
               </tr>
             <% end %>
           </tbody>
@@ -39,7 +39,9 @@
       <% end %>
     </div>
   </div>
-  <div class="col-xs-8">
-    <%= link_to '新規タスクの作成', new_task_path, class: 'btn btn-info' %>
-  </div>
+  <% if @edit_mode%>
+    <div class="col-xs-8">
+      <%= link_to '新規タスクの作成', new_task_path, class: 'btn btn-info' %>
+    </div>
+  <% end %>
 </div>

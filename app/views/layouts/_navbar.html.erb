@@ -18,6 +18,7 @@
             <% end %>
             <li><%= link_to '新規タスクの作成', new_task_path %></li>
             <li><%= link_to 'タスク一覧', tasks_path %></li>
+            <li><%= link_to 'ユーザ一覧', users_path %></li>
             <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
           <% else %>
             <li><%= link_to '新規ユーザ登録', signup_path %></li>

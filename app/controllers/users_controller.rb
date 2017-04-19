@@ -7,8 +7,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @task = current_user.tasks.build  # form_for 用
-    @tasks = current_user.tasks.order('created_at DESC').page(params[:page])
+    @task = @user.tasks.build  # form_for 用
+    @tasks = @user.tasks.order('created_at DESC').page(params[:page])
+    #他人が参照しているとき
+    @edit_mode = false
+    if params[:id] == session[:user_id]
+      @edit_mode = true
+    end
   end
 
   def new
