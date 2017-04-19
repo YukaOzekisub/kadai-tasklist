@@ -1,37 +1,36 @@
 <div class="row">
-    <%= form_for(task) do |f| %>
+  <%= form_for(task) do |f| %>
       
-      <%= render 'layouts/error_messages', model: f.object %>
+    <%= render 'layouts/error_messages', model: f.object %>
   
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-lg-offset-3">
-          <%= f.label :content, 'タスクの内容'%>
-          <br />
-          <div class="col-xs-12 col-sm-8 col-lg-6">
-            <%= f.text_field :content, class: 'form-control' %>
-          </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-lg-offset-3">
+        <%= f.label :content, 'タスク'%>
+        <br />
+        <div class="col-xs-12 col-sm-8 col-lg-6">
+          <%= f.text_field :content, class: 'form-control' %>
         </div>
       </div>
+    </div>
       
-      <br />
+    <br />
       
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-lg-offset-3">
-          <%= f.label :status, 'タスクの状況' %>
-          <br />
-          <div class="col-xs-12 col-sm-8 col-lg-6">
-            <%= f.text_field :status, class: 'form-control' %>
-          </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-lg-offset-3">
+        <%= f.label :status, 'タスクの状態' %>
+        <br />
+        <div class="col-xs-12 col-sm-8 col-lg-6">
+          <%= f.text_field :status, class: 'form-control' %>
         </div>
       </div>
+    </div>
   
-     <div class="form-group">
-        <div class="col-sm-offset-2 col-lg-offset-3">
-          <div class="col-xs-12 col-sm-8 col-lg-6">
-            <%= f.submit '投稿', class: 'btn btn-promary' %>
-          </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-lg-offset-3">
+        <div class="col-xs-12 col-sm-8 col-lg-6">
+          <%= f.submit '投稿', class: 'btn btn-promary' %>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

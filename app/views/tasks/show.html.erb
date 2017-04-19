@@ -18,5 +18,8 @@
 </table>
 
 <%= link_to '編集する', edit_task_path, class: 'btn btn-default' %>
-
 <%= link_to '削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<% unless @current_user.nil? %>
+  <%= link_to 'ホーム', "/users/#{@current_user.id}", class: "btn btn-info" %>
+<% end %>
+<%= link_to 'タスク一覧', tasks_path, class: "btn btn-info" %>
