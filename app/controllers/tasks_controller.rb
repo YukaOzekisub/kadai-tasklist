@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
+  before_action :can_not_edit_else_user, only: [:show, :edit, :update, :destroy]
   
   def index
     @tasks = Task.all
   end
   
   def show
-    @task = Task.find(params[:id])
+    
   end
   
   def new
@@ -15,7 +16,6 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @task = Task.find(params[:id])
     @form_type = 'edit'
   end
   
@@ -32,7 +32,6 @@ class TasksController < ApplicationController
   end 
   
   def update
-    @task = Task.find(params[:id])
     
     if @task.update(task_params)
       flash[:success] = 'Taskは正常に更新されました'
@@ -46,7 +45,6 @@ class TasksController < ApplicationController
   
   
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     
     flash[:success] = 'Taskは正常に削除されました'
@@ -60,4 +58,11 @@ class TasksController < ApplicationController
     params.require(:task).permit(:content, :status)
   end
   
+  
+  def can_not_edit_else_user
+    @task = Task.find_by(id: params[:id])
+    render 'page_error' and return if @task.nil?
+    return if current_user.id.to_i == @task.user.id.to_i
+    render 'page_error'
+  end
 end

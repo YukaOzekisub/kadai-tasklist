@@ -1,0 +1,5 @@
+<h2>お探しのページはありません</h2>
+
+<% unless @current_user.nil? %>
+  <%= link_to 'ホーム', "/users/#{@current_user.id}", class: "btn btn-info" %>
+<% end %>
