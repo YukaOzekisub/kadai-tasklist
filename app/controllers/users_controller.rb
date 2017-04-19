@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @tasks = @user.tasks.order('created_at DESC').page(params[:page])
     #他人が参照しているとき
     @edit_mode = false
-    if params[:id] == session[:user_id]
+    if params[:id].to_i == session[:user_id].to_i
       @edit_mode = true
     end
   end
